@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="images/deltarune_logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Simulador Trivia DELTARUNE</title>
+</head>
+<body>
+    <div>
+        <main id="introduccion">
+            <h1>SIMULADOR DE PREGUNTAS SOBRE</h1>
+            <img src="images/logo.png" alt="Logo DELTARUNE">
+            <p>Este simulador es un pequeño juego de preguntas de opción múltiple sobre el juego <a href="https://www.deltarune.com" style="text-decoration: none; color: #f2f2f2;">DELTARUNE</a></p>
+            <button id="startGameBtn">Iniciar</button>
+            <audio id="musicaFondo" src="audio/trash.mp3" loop></audio> <!-- Música de fondo para las preguntas -->
+        </main>
+        <div id="juego" style="display: none;">
+            <h2 id="pregunta"></h2>
+            <div id="opciones"></div>
+            <p id="progreso"></p>
+        </div>
+        <div id="resultado" style="display: none;">
+        <h2 id="puntajeFinal"></h2>
+        <button id="reiniciar">Reiniciar</button>
+        <button id="volverMenu">Volver al Menú</button> <!-- NUEVO BOTÓN -->
+</div>
+    </div>
+    <script src="js/juego.js"></script>
+</body>
+</html>
