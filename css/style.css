@@ -64,6 +64,14 @@ p {
     line-height: 1.6;
 }
 
+ul {
+    margin-top: 10px;
+}
+
+li {
+    list-style: none;
+}
+
 button {
     background-color: var(--texto);
     color: var(--fondo);
