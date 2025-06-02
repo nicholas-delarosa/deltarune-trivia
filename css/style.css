@@ -54,7 +54,7 @@ h1 {
 img {
     max-width: 100%;
     height: auto;
-    width: 50%;
+    width: 70%;
     margin: -5px 10px 20px 10px;
 }
 
@@ -129,4 +129,34 @@ button:hover {
     font-size: 1.8rem;
     margin-bottom: 20px;
     color: var(--primario);
+}
+
+#mensajeAnterior {
+    font-weight: bold;
+    background: linear-gradient(
+    to right,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet,
+    red,
+    orange,
+    yellow
+    );
+    background-size: 500% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbow-scroll 5s linear infinite;
+}
+
+@keyframes rainbow-scroll {
+    0% {
+    background-position: 0 50%;
+    }
+    100% {
+    background-position: 100% 50%;
+    }
 }

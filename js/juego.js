@@ -241,6 +241,7 @@ function mostrarResultados() {
     listaErrores.style.display = "none";
     mensajeFinal.innerHTML = "¡Perfecto! Todas tus respuestas fueron correctas.";
   }
+  localStorage.setItem("ultimoPuntaje", puntaje);
 }
 
 function reiniciarJuego() {
@@ -271,4 +272,13 @@ function volverAlMenu() {
   //Música
   musica.pause(); 
   musica.currentTime = 0;
+
+  const mensajeAnterior = document.getElementById("mensajeAnterior");
+  const puntajeGuardado = localStorage.getItem("ultimoPuntaje");
+
+  if (puntajeGuardado !== null) {
+    mensajeAnterior.textContent = `Puntaje anterior: ${puntajeGuardado} puntos.`;
+  } else {
+    mensajeAnterior.textContent = "";
+  }
 }
