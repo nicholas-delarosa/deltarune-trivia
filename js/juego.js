@@ -274,7 +274,7 @@ function volverAlMenu() {
   musica.currentTime = 0;
 
   const mensajeAnterior = document.getElementById("mensajeAnterior");
-  const puntajeGuardado = localStorage.getItem("ultimoPuntaje");
+  const puntajeGuardado = parseInt(localStorage.getItem("ultimoPuntaje")) || 0;
 
   if (puntajeGuardado !== null) {
     mensajeAnterior.textContent = `Puntaje anterior: ${puntajeGuardado} puntos.`;
@@ -282,3 +282,14 @@ function volverAlMenu() {
     mensajeAnterior.textContent = "";
   }
 }
+
+window.addEventListener("DOMContentLoaded", () => {
+  const mensajeAnterior = document.getElementById("mensajeAnterior");
+  const puntajeGuardado = parseInt(localStorage.getItem("ultimoPuntaje")) || 0;
+
+  if (puntajeGuardado !== null) {
+    mensajeAnterior.textContent = `Puntaje anterior: ${puntajeGuardado} puntos.`;
+  } else {
+    mensajeAnterior.textContent = "";
+  }
+});
