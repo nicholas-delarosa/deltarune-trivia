@@ -273,23 +273,21 @@ function volverAlMenu() {
   musica.pause(); 
   musica.currentTime = 0;
 
-  const mensajeAnterior = document.getElementById("mensajeAnterior");
-  const puntajeGuardado = parseInt(localStorage.getItem("ultimoPuntaje")) || 0;
+  const puntajeGuardado = localStorage.getItem("ultimoPuntaje");
 
-  if (puntajeGuardado !== null) {
-    mensajeAnterior.textContent = `Puntaje anterior: ${puntajeGuardado} puntos.`;
+  if (puntajeGuardado !== null && parseInt(puntajeGuardado) > 0) {
+  mensajeAnterior.textContent = `Puntaje anterior: ${puntajeGuardado} puntos.`;
   } else {
-    mensajeAnterior.textContent = "";
+  mensajeAnterior.textContent = "";
   }
 }
 
-window.addEventListener("DOMContentLoaded", () => {
+  window.addEventListener("DOMContentLoaded", () => {
   const mensajeAnterior = document.getElementById("mensajeAnterior");
-  const puntajeGuardado = parseInt(localStorage.getItem("ultimoPuntaje")) || 0;
+  const puntajeGuardado = localStorage.getItem("ultimoPuntaje");
 
-  if (puntajeGuardado !== null) {
+  // Solo mostrar si existe y es un número mayor a 0
+  if (puntajeGuardado !== null && parseInt(puntajeGuardado) > 0) {
     mensajeAnterior.textContent = `Puntaje anterior: ${puntajeGuardado} puntos.`;
-  } else {
-    mensajeAnterior.textContent = "";
   }
 });
