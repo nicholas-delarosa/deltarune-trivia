@@ -118,6 +118,8 @@ const reiniciarBtn = document.getElementById("reiniciar");
 const mensajeFinal = document.getElementById("mensajeFinal");
 const mostrarErroresBtn = document.getElementById("mostrarErroresBtn");
 const listaErrores = document.getElementById("listaErrores");
+const imagen = document.getElementById("logonoise");
+const audio = document.getElementById("intronoise");
 
 startGameBtn.addEventListener("click", iniciarJuego);
 reiniciarBtn.addEventListener("click", reiniciarJuego);
@@ -242,6 +244,11 @@ function mostrarResultados() {
     mensajeFinal.innerHTML = "¡Perfecto! Todas tus respuestas fueron correctas.";
   }
   localStorage.setItem("ultimoPuntaje", puntaje);
+  const puntajeMaximoGuardado = localStorage.getItem("puntajeMaximo") || 0;
+  if (puntaje > puntajeMaximoGuardado) {
+  localStorage.setItem("puntajeMaximo", puntaje);
+}
+
 }
 
 function reiniciarJuego() {
@@ -273,21 +280,44 @@ function volverAlMenu() {
   musica.pause(); 
   musica.currentTime = 0;
 
-  const puntajeGuardado = localStorage.getItem("ultimoPuntaje");
+  const mensajeAnterior = document.getElementById("mensajeAnterior");
+  const puntajeMaximoDiv = document.getElementById("puntajeMaximo");
 
-  if (puntajeGuardado !== null && parseInt(puntajeGuardado) > 0) {
-  mensajeAnterior.textContent = `Puntaje anterior: ${puntajeGuardado} puntos.`;
+  const puntajeGuardado = localStorage.getItem("ultimoPuntaje");
+  const puntajeMaximo = localStorage.getItem("puntajeMaximo");
+
+  if (puntajeGuardado !== null) {
+    mensajeAnterior.textContent = `Puntaje anterior: ${puntajeGuardado} puntos.`;
   } else {
-  mensajeAnterior.textContent = "";
+    mensajeAnterior.textContent = "";
+  }
+
+  if (puntajeMaximo !== null) {
+    puntajeMaximoDiv.textContent = `¡Tu puntaje más alto hasta ahora es: ${puntajeMaximo} puntos!`;
+  } else {
+    puntajeMaximoDiv.textContent = "";
   }
 }
 
-  window.addEventListener("DOMContentLoaded", () => {
+// Mostrar mensajes al cargar la página
+window.addEventListener("DOMContentLoaded", () => {
   const mensajeAnterior = document.getElementById("mensajeAnterior");
-  const puntajeGuardado = localStorage.getItem("ultimoPuntaje");
+  const puntajeMaximoDiv = document.getElementById("puntajeMaximo");
 
-  // Solo mostrar si existe y es un número mayor a 0
-  if (puntajeGuardado !== null && parseInt(puntajeGuardado) > 0) {
+  const puntajeGuardado = localStorage.getItem("ultimoPuntaje");
+  const puntajeMaximo = localStorage.getItem("puntajeMaximo");
+
+  if (puntajeGuardado !== null) {
     mensajeAnterior.textContent = `Puntaje anterior: ${puntajeGuardado} puntos.`;
   }
+
+  if (puntajeMaximo !== null) {
+    puntajeMaximoDiv.textContent = `¡Tu puntaje más alto hasta ahora es: ${puntajeMaximo} puntos!`;
+  }
+});
+
+//AUDIO_INTRONOISE
+imagen.addEventListener("click", () => {
+  audio.currentTime = 0; // Reinicia el audio cada vez que se toca
+  audio.play();
 });
