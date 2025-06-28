@@ -198,5 +198,155 @@
             "1"
         ],
         "respuesta": "1"
+    },
+    {
+        "pregunta": "¿Quién es la reina del mundo oscuro en el Capítulo 2?",
+        "opciones": [
+            "Queen",
+            "King",
+            "Noelle",
+            "Spamton"
+        ],
+        "respuesta": "Queen"
+    },
+    {
+        "pregunta": "¿Cuál es el nombre del jefe secreto del Capítulo 2?",
+        "opciones": [
+            "Jevil",
+            "Spamton NEO",
+            "Queen",
+            "Berdly"
+        ],
+        "respuesta": "Spamton NEO"
+    },
+    {
+        "pregunta": "¿Qué personaje se une temporalmente a tu equipo en el Capítulo 2?",
+        "opciones": [
+            "Noelle",
+            "Alphys",
+            "Undyne",
+            "Toriel"
+        ],
+        "respuesta": "Noelle"
+    },
+    {
+        "pregunta": "¿Qué objeto puedes conseguir en el Capítulo 2 que te permite guardar progresos?",
+        "opciones": [
+            "Diskette",
+            "Save Point",
+            "Keygen",
+            "Cell Phone"
+        ],
+        "respuesta": "Save Point"
+    },
+    {
+        "pregunta": "¿Qué animal es el personaje Tasque Manager?",
+        "opciones": [
+            "Gato",
+            "Perro",
+            "Ratón",
+            "Pájaro"
+        ],
+        "respuesta": "Gato"
+    },
+    {
+        "pregunta": "¿Qué personaje es conocido por decir \"[[BIG SHOT]]\"?",
+        "opciones": [
+            "Spamton",
+            "Queen",
+            "Berdly",
+            "Ralsei"
+        ],
+        "respuesta": "Spamton"
+    },
+    {
+        "pregunta": "¿Qué color son las plumas de Berdly?",
+        "opciones": [
+            "Azul",
+            "Verde",
+            "Rojo",
+            "Amarillo"
+        ],
+        "respuesta": "Azul"
+    },
+    {
+        "pregunta": "¿Cómo se llama la ciudad del mundo oscuro en el Capítulo 2?",
+        "opciones": [
+            "Cyber World",
+            "Card Castle",
+            "Hometown",
+            "Dark City"
+        ],
+        "respuesta": "Cyber World"
+    },
+    {
+        "pregunta": "¿Qué objeto puedes conseguir de Spamton en el Capítulo 2?",
+        "opciones": [
+            "Keygen",
+            "Egg",
+            "Tiza",
+            "Cake"
+        ],
+        "respuesta": "Keygen"
+    },
+    {
+        "pregunta": "¿Cuál es el nombre completo de Spamton?",
+        "opciones": [
+            "Spamton G. Spamton",
+            "Spamton B. Spamton",
+            "Pipis S. Pipis",
+            "Spamton S. Spamton"
+        ],
+        "respuesta": "Spamton G. Spamton"
+    },
+    {
+        "pregunta": "¿Cómo se llama el castillo de Queen?",
+        "opciones": [
+            "Queen's Castle",
+            "Cyber Palace",
+            "Card Castle",
+            "Queen's Mansion"
+        ],
+        "respuesta": "Queen's Mansion"
+    },
+    {
+        "pregunta": "¿Qué personaje le tiene miedo a los ratones en el Capítulo 2?",
+        "opciones": [
+            "Noelle",
+            "Susie",
+            "Kris",
+            "Queen"
+        ],
+        "respuesta": "Noelle"
+    },
+    {
+        "pregunta": "¿Cómo se llama el grupo musical que aparece en el Capítulo 2?",
+        "opciones": [
+            "Sweet Cap'n Cakes",
+            "Starwalker Band",
+            "Cyber Trio",
+            "Queen's Band"
+        ],
+        "respuesta": "Sweet Cap'n Cakes"
+    },
+    {
+        "pregunta": "¿Qué personaje se convierte en aliado temporal durante la ruta Snowgrave?",
+        "opciones": [
+            "Noelle",
+            "Berdly",
+            "Queen",
+            "Spamton"
+        ],
+        "respuesta": "Noelle"
+    },
+    {
+        "pregunta": "¿Qué objeto puedes conseguir en la tienda de Queen?",
+        "opciones": [
+            "Royal Pin",
+            "Keygen",
+            "Diskette",
+            "Egg"
+        ],
+        "respuesta": "Royal Pin"
     }
 ]
