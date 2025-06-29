@@ -37,6 +37,14 @@ const audiosFondo = [
     "assets/audio/quiz.mp3",
     "assets/audio/ruder.mp3"
 ];
+const nombreForm = document.getElementById("nombreForm");
+const nombreInput = document.getElementById("nombreInput");
+const nombreGuardado = document.getElementById("nombreGuardado");
+const audioHover = document.getElementById("audioHover");
+const audioClick = document.getElementById("audioClick");
+const audioWin = document.getElementById("audioWin");
+const audioLose = document.getElementById("audioLose");
+const rankingJugadores = document.getElementById("rankingJugadores");
 
 // Timer Functions
 function iniciarTemporizador() {
@@ -96,7 +104,18 @@ function mostrarResultados() {
     resultadoDiv.style.display = "block";
 
     puntajeFinal.textContent = `Obtuviste ${puntaje} de ${preguntasBarajadas.length} puntos.`;
+    // Mostrar formulario de nombre
+    nombreForm.style.display = "block";
+    nombreGuardado.textContent = "";
 
+    // Sonido según puntaje
+    if (puntaje === preguntasBarajadas.length) {
+        audioWin.currentTime = 0;
+        audioWin.play();
+    } else if (puntaje < preguntasBarajadas.length) {
+        audioLose.currentTime = 0;
+        audioLose.play();
+    }
     const erroresFiltrados = errores.filter(e => e !== null);
 
     if (erroresFiltrados.length > 0) {
@@ -135,7 +154,61 @@ function mostrarResultados() {
     if (puntaje > puntajeMaximoGuardado) {
         localStorage.setItem("puntajeMaximo", puntaje);
     }
+    mostrarRanking();
 }
+
+// Guardar nombre y puntaje
+nombreForm.onsubmit = (e) => {
+    e.preventDefault();
+    const nombre = nombreInput.value.trim();
+    let ranking = JSON.parse(localStorage.getItem("rankingJugadores") || "[]");
+    ranking.push({ nombre: nombre || "Anónimo", puntaje });
+    localStorage.setItem("rankingJugadores", JSON.stringify(ranking));
+    if (nombre) {
+        nombreGuardado.textContent = `¡Gracias, ${nombre}! Puntaje registrado: ${puntaje}`;
+        localStorage.setItem("nombreJugador", nombre);
+    } else {
+        nombreGuardado.textContent = `Puntaje registrado sin nombre: ${puntaje}`;
+    }
+    nombreForm.style.display = "none";
+    mostrarRanking();
+};
+
+// Mostrar ranking de jugadores
+function mostrarRanking() {
+    let ranking = JSON.parse(localStorage.getItem("rankingJugadores") || "[]");
+    if (ranking.length === 0) {
+        rankingJugadores.innerHTML = "";
+        return;
+    }
+    // Ordenar por puntaje descendente
+    ranking.sort((a, b) => b.puntaje - a.puntaje);
+    let html = `<h3 style="color:var(--primario);margin-bottom:8px;">Jugadores registrados</h3><ul style="list-style:none;padding:0;">`;
+    ranking.forEach((jug, i) => {
+        html += `<li style="margin-bottom:4px;">
+            <span style="font-weight:bold;color:yellow;">${i+1}.</span>
+            <span style="color:cyan;">${jug.nombre || "Anónimo"}</span>
+            <span style="color:#fff;">-</span>
+            <span style="color:lightgreen;">${jug.puntaje} pts</span>
+        </li>`;
+    });
+    html += "</ul>";
+    rankingJugadores.innerHTML = html;
+}
+
+// Sonidos de hover y click en botones
+document.addEventListener("mouseover", (e) => {
+    if (e.target.tagName === "BUTTON") {
+        audioHover.currentTime = 0;
+        audioHover.play();
+    }
+});
+document.addEventListener("click", (e) => {
+    if (e.target.tagName === "BUTTON") {
+        audioClick.currentTime = 0;
+        audioClick.play();
+    }
+});
 
 // Game Flow Functions
 async function iniciarJuego() {

@@ -32,15 +32,30 @@
         <div id="resultado" style="display: none;">
             <p id="puntajeFinal"></p>
             <p id="mensajeFinal"></p>
+            <form id="nombreForm" style="display:none; margin-bottom:15px;">
+            <label for="nombreInput">¿Quieres registrar tu nombre?</label>
+            <input type="text" id="nombreInput" maxlength="20" placeholder="Tu nombre (opcional)">
+            <button type="submit">Guardar</button>
+            </form>
+            <div id="nombreGuardado" style="margin-bottom:10px;"></div>
+            <div id="rankingJugadores" style="margin-bottom:20px;"></div>
             <button id="reiniciar">Reiniciar</button>
-            <button id="volverMenu">Volver al Menú</button> <!-- NUEVO BOTÓN -->
+            <button id="volverMenu">Volver al Menú</button>
             <button id="mostrarErroresBtn" style="display: none;">Mostrar errores</button>
             <div id="listaErrores" style="display: none;"></div>
         </div>
+    </div>
+    <div>
+        <audio id="audioHover" src="assets/audio/hover.mp3"></audio>
+        <audio id="audioClick" src="assets/audio/click.mp3"></audio>
+        <audio id="audioWin" src="assets/audio/win.mp3"></audio>
+        <audio id="audioLose" src="assets/audio/nowin.mp3"></audio>
     </div>
     <!-- Mi Scripts -->
     <script type="module" src="assets/js/main.js"></script>
     <!-- Luxon -->
     <script src="https://cdn.jsdelivr.net/npm/luxon@3/build/global/luxon.min.js"></script>
+    <!-- Toastify -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </body>
 </html>
