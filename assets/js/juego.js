@@ -19,7 +19,7 @@ function barajarArray(array) {
 // Cargar preguntas
 async function cargarPreguntas() {
     try {
-        const response = await fetch('assets/js/preguntas.json');
+        const response = await fetch(new URL('./preguntas.json', import.meta.url));
         if (!response.ok) throw new Error("No se pudo cargar el archivo JSON");
         const datos = await response.json();
         preguntasBarajadas = barajarArray(datos);
@@ -61,6 +61,12 @@ function reiniciarEstadoJuego() {
 
 function retrocederPregunta() {
     if (preguntaActual > 0) {
+        const indiceAnterior = preguntaActual - 1;
+        // Si la respuesta anterior era correcta, se resta el punto
+        if (respuestasUsuario[indiceAnterior] === preguntasBarajadas[indiceAnterior].respuesta) {
+            puntaje--;
+        }
+        errores[indiceAnterior] = null;
         preguntaActual--;
     }
 }

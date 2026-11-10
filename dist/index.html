@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/assets/deltarune_logo-CWFCnFdp.ico" type="image/x-icon">
+    <title>Simulador Trivia DELTARUNE</title>
+  <script type="module" crossorigin src="/assets/index-CQMt5SvP.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-DcScG9Jn.css">
+</head>
+<body>
+    <div>
+        <main id="introduccion">
+            <h1>Trivia Interactiva de</h1>
+            <img id="logonoise" src="data:image/png;base64,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" alt="Logo DELTARUNE">
+            <audio id="intronoise" src="/assets/AUDIO_INTRONOISE-SgMeJRro.mp3"></audio>
+            <p>Pon a prueba tus conocimientos sobre <a href="https://www.deltarune.com" style="text-decoration: none; color: #f2f2f2;">DELTARUNE</a> con este juego de preguntas de opción múltiple. ¡Demuestra cuánto sabes y alcanza el puntaje más alto!</p>
+            <div id="mensajeAnterior" style="margin-bottom: 10px;"></div>
+            <div id="puntajeMaximo" style="margin-bottom: 15px; font-weight: bold; color: yellow;"></div>
+            <button id="startGameBtn">Iniciar</button>
+            <!-- Músicas de fondo para las preguntas -->
+            <audio id="musicaFondo" src="/assets/trash-C2FxeR5Z.mp3" loop></audio>
+            <audio src="/assets/quiz-D9GukmW-.mp3" loop></audio>
+            <audio src="/assets/ruder-CAfe_9vX.mp3" loop></audio>
+        </main>
+        <div id="juego" style="display: none;">
+            <h2 id="pregunta"></h2>
+            <p id="tiempoRestante" style="font-weight: bold; text-align: center; font-size: 18px;"></p>
+            <div id="opciones"></div>
+            <p id="progreso"></p>
+            <button id="anteriorBtn" style="display: none; margin: -20px;">Anterior</button>
+        </div>
+        <div id="resultado" style="display: none;">
+            <p id="puntajeFinal"></p>
+            <p id="mensajeFinal"></p>
+            <form id="nombreForm" style="display:none; margin-bottom:15px;">
+            <label for="nombreInput">¿Quieres registrar tu nombre?</label>
+            <input type="text" id="nombreInput" maxlength="20" placeholder="Tu nombre (opcional)">
+            <button type="submit">Guardar</button>
+            </form>
+            <div id="nombreGuardado" style="margin-bottom:10px;"></div>
+            <div id="rankingJugadores" style="margin-bottom:20px;"></div>
+            <button id="reiniciar">Reiniciar</button>
+            <button id="volverMenu">Volver al Menú</button>
+            <button id="mostrarErroresBtn" style="display: none;">Mostrar errores</button>
+            <div id="listaErrores" style="display: none;"></div>
+        </div>
+    </div>
+    <div>
+        <audio id="audioHover" src="/assets/hover-C_um75vB.mp3"></audio>
+        <audio id="audioClick" src="/assets/click-sbN8Hr7x.mp3"></audio>
+        <audio id="audioWin" src="/assets/win-DRly9YQW.mp3"></audio>
+        <audio id="audioLose" src="/assets/nowin-DX_ha6tJ.mp3"></audio>
+    </div>
+    <!-- Mi Scripts -->
+    <!-- Luxon -->
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3/build/global/luxon.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "name": "js-dr",
+  "version": "1.0.0",
+  "description": "¡Bienvenido/a al **Simulador de Trivia DELTARUNE**!  \r Este proyecto es un juego interactivo de preguntas de opción múltiple basado en el universo de DELTARUNE, desarrollado como proyecto final para el curso de JavaScript en CoderHouse.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nicholas-delarosa/deltarune-trivia.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/nicholas-delarosa/deltarune-trivia/issues"
+  },
+  "homepage": "https://github.com/nicholas-delarosa/deltarune-trivia#readme",
+  "devDependencies": {
+    "vite": "^8.3.7"
+  }
+}

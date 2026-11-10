@@ -2,7 +2,6 @@ import {
     preguntasBarajadas,
     puntaje,
     preguntaActual,
-    respuestasUsuario,
     errores,
     tiempoLimite,
     timerInterval,
@@ -33,9 +32,9 @@ const tiempoRestanteSpan = document.getElementById("tiempoRestante");
 const anteriorBtn = document.getElementById("anteriorBtn");
 const volverMenuBtn = document.getElementById("volverMenu");
 const audiosFondo = [
-    "assets/audio/trash.mp3",
-    "assets/audio/quiz.mp3",
-    "assets/audio/ruder.mp3"
+    new URL("../audio/trash.mp3", import.meta.url).href,
+    new URL("../audio/quiz.mp3", import.meta.url).href,
+    new URL("../audio/ruder.mp3", import.meta.url).href
 ];
 const nombreForm = document.getElementById("nombreForm");
 const nombreInput = document.getElementById("nombreInput");
@@ -270,11 +269,6 @@ imagen.addEventListener("click", () => {
 
 anteriorBtn.addEventListener("click", () => {
     if (preguntaActual > 0) {
-        const respuestaAnterior = respuestasUsuario[preguntaActual - 1];
-        if (respuestaAnterior === preguntasBarajadas[preguntaActual - 1].respuesta) {
-            puntaje--;
-        }
-        errores[preguntaActual - 1] = null;
         retrocederPregunta();
         mostrarPregunta();
     }
